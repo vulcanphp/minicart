@@ -9,7 +9,7 @@
             </div>
 
             <div class="col-span-3">
-                {search box}
+                <x-search />
             </div>
 
             <div class="col-span-2 flex flex-col justify-center items-end">
