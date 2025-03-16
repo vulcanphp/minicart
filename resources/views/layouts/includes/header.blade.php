@@ -3,7 +3,9 @@
         <div class="grid grid-cols-7 gap-4 w-full">
 
             <div class="col-span-2 flex flex-col justify-center">
-                {logo}
+                <x-logo class="text-2xl font-light text-gray-600">
+                    Mini<span class="font-semibold text-gray-950">Cart</span>
+                </x-logo>
             </div>
 
             <div class="col-span-3">
