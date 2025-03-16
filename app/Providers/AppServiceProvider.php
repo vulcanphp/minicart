@@ -29,10 +29,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
-        cart()->addItem(1);
-        cart()->addItem(2, 2);
-        cart()->addItem(6);
-
-        dd(cart()->getSubtotal(), cart()->getDiscount());
     }
 }
