@@ -5,7 +5,9 @@ import Alpine from 'alpinejs';
 document.addEventListener('alpine:init', () => {
 
     Alpine.data('miniCart', () => ({
-
+        addToCart(productId) {
+            this.$el.classList.add('btn-is-loading');
+        }
     }));
 
     Alpine.data('searchBox', () => ({

@@ -42,7 +42,7 @@ abstract class ArrayModel extends Model
      *
      * @param mixed $id The ID of the record to find.
      * @param array $columns The columns to be selected.
-     * @return \Illuminate\Support\Collection|null The found record or null if not found.
+     * @return static|null The found record or null if not found.
      */
     public static function find($id, $columns = ['*'])
     {

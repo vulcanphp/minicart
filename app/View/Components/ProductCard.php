@@ -31,6 +31,11 @@ class ProductCard extends Component
         return $this->product->name;
     }
 
+    public function isProductInStock(): bool
+    {
+        return $this->product->stock_status === 'in_stock';
+    }
+
     public function productPrice(): string
     {
         return sprintf('$%.2f', $this->product->price);

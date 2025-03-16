@@ -5,7 +5,7 @@
         <img src="{{ $productImageUrl }}" class="w-full m-auto h-52 object-contain" alt="{{ $productName }}">
     </a>
 
-    @if ($product->stock_status !== 'in_stock')
+    @if (!$isProductInStock())
         <span
             class="absolute pointer-events-none top-2 right-2 bg-red-600/65 text-red-50 text-[0.8rem] font-medium rounded px-2 py-0.5">{!! __('Out of Stock') !!}</span>
     @endif
@@ -18,8 +18,8 @@
         <div class="flex items-center justify-between gap-2">
             <span class="font-semibold text-rose-600">{{ $productPrice }}</span>
 
-            <button x-on:click="addToCart({{ $product->id }})"
-                {{ $product->stock_status !== 'in_stock' ? 'disabled' : '' }} class="btn-add-cart">
+            <button x-on:click="addToCart({{ $product->id }})" {{ !$isProductInStock() ? 'disabled' : '' }}
+                class="btn-add-cart">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round"
