@@ -1,6 +1,6 @@
-<div class="relative z-50" x-data="searchBox" x-on:keydown.escape.window="isOpen = false">
+<div class="relative" x-data="searchBox" x-on:keydown.escape.window="isOpen = false">
 
-    <form x-on:submit.prevent="fetchResult" class="relative z-50">
+    <form x-on:submit.prevent="fetchResult" class="relative z-20">
 
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
             class="size-5 absolute top-1/2 left-3 transform -translate-y-1/2 text-gray-400">
@@ -15,7 +15,7 @@
     </form>
 
     <div x-cloak x-show="isOpen" x-transition
-        class="absolute z-50 top-auto inset-x-0 w-full bg-white shadow-xl rounded-b max-h-96 overflow-y-auto overflow-hidden">
+        class="absolute z-20 top-auto inset-x-0 w-full bg-white shadow-xl rounded-b max-h-96 overflow-y-auto overflow-hidden">
 
         <div x-show="searchResults.length">
             <template x-for="item in searchResults" :key="item.id">
@@ -41,5 +41,5 @@
 
     </div>
 
-    <div x-cloak x-show="isOpen" x-on:click="isOpen = false" class="fixed inset-0 z-40 bg-gray-950/25"></div>
+    <div x-cloak x-show="isOpen" x-on:click="isOpen = false" class="fixed inset-0 z-10 bg-gray-950/25"></div>
 </div>

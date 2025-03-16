@@ -1,11 +1,7 @@
 <?php
 
-use App\Models\Product;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-
-    dd(Product::all());
-
-    return view('welcome');
-});
+Route::get('/', [ShopController::class, 'index'])->name('shop');
+Route::get('/products/{id}', [ShopController::class, 'show'])->name('shop.show');

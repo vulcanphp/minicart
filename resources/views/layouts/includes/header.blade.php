@@ -1,4 +1,4 @@
-<header class="fixed inset-x-0 top-0 bg-gray-50 w-full h-16 md:h-20">
+<header class="fixed inset-x-0 top-0 bg-gray-50 w-full h-16 md:h-20 z-40">
     <div class="max-w-6xl h-full mx-auto flex flex-col justify-center items-center">
         <div class="grid grid-cols-7 gap-4 w-full">
 

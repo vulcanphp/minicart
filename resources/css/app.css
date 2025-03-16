@@ -7,6 +7,53 @@
 @source "../**/*.vue";
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@layer base {
+
+    button:not(:disabled) {
+        @apply cursor-pointer;
+    }
+
+    button[disabled] {
+        @apply pointer-events-none opacity-50;
+    }
+}
+
+@layer utilities {
+    .btn-add-cart {
+        @apply relative w-8 h-8 bg-rose-50 border border-rose-100 text-rose-600 hover:border-rose-600 hover:bg-rose-600 hover:text-rose-50 transition ease-in-out px-1.5 py-1 rounded-md;
+    }
+
+    .btn-add-cart svg {
+        @apply absolute top-1/2 left-1/2 transform -translate-1/2 size-6;
+    }
+
+    .btn-is-loading svg {
+        @apply hidden;
+    }
+
+    .btn-is-loading {
+        @apply bg-rose-600 border-rose-600 text-rose-50 pointer-events-none;
+    }
+
+    .btn-is-loading::after {
+        @apply w-4 h-4 rounded-full absolute top-1/2 left-1/2 content-[''];
+        transform: translate(-50%);
+        background-image: conic-gradient(transparent 5deg, #fff 360deg);
+        mask: radial-gradient(farthest-side, transparent calc(100% - 1.3px), #fff 0);
+        animation: loader-spin .5s linear infinite;
+    }
+}
+
+@keyframes loader-spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }

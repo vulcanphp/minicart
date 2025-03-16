@@ -12,7 +12,6 @@ class Product extends ArrayModel
             'name' => 'Apple MacBook Pro 2019 Model (13-Inch, Intel Core i5, 1.4Ghz, 8GB, 128GB)',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/oyIoqGHxEmizRExHXmXi2Y4Hsip5RZm7aVsRrJZN.jpeg',
             'price' => 949.99,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -20,7 +19,6 @@ class Product extends ArrayModel
             'name' => 'Acer Swift 3 SF315-41G-R6MP Laptop, 15.6" Full HD IPS Display, AMD Ryzen 7 2700U',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/YXFIHEgHF4JOGhBdtehoqGzES93CfS2gaxRpIt1U.jpeg',
             'price' => 750.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -28,7 +26,6 @@ class Product extends ArrayModel
             'name' => 'Lenovo Flex 14 2-in-1 Convertible Laptop, 14 Inch FHD Touchscreen Display, AMD Ryzen 5 3500U Processor',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/m2RjsMI8evkRwCSPVM06DL0wOwbdgnLakWztS6Z2.jpeg',
             'price' => 650.00,
-            'product_status' => 'published',
             'stock_status' => 'out_of_stock',
         ],
         [
@@ -36,7 +33,6 @@ class Product extends ArrayModel
             'name' => 'Apple iPad Pro (11-inch, Wi-Fi, 64GB) - Silver (1st Generation)',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/X8JZ9741BSxy5YSJ8v7nSICg0iYBLSEnwlxpBCeI.jpeg',
             'price' => 859.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -44,7 +40,6 @@ class Product extends ArrayModel
             'name' => 'Samsung Galaxy Tab S6 10.5", 128GB WiFi Tablet Cloud Blue',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/Fjw7GF9L517a8WoRrPAXVHtj7Agvrz1bGV193kxH.jpeg',
             'price' => 568.66,
-            'product_status' => 'draft',
             'stock_status' => 'in_stock',
         ],
         [
@@ -52,7 +47,6 @@ class Product extends ArrayModel
             'name' => 'Samsung Galaxy S20 (SM-G980F/DS) Dual SIM 128GB, 6.2" (International Version)',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/e1z91WI8lLQSiQsxdirkIAIEIsSHmYIOQSOoXZmT.jpeg',
             'price' => 998.58,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -60,7 +54,6 @@ class Product extends ArrayModel
             'name' => 'Samsung Galaxy Note 10+ Plus Factory Unlocked Cell Phone with 256GB (U.S. Warranty), Aura White/ Note10+',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/OthhGJyFXCq57Ukxm4SpS2lr4TfTai9AId9sKZIB.jpeg',
             'price' => 1100.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -68,15 +61,13 @@ class Product extends ArrayModel
             'name' => 'Apple Watch Series 3 (GPS, 42mm) - Space Gray',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/34YY3siTu4hf4ROI5kvcGBGOovi3N9u0zxpWT4MC.jpeg',
             'price' => 350.00,
-            'product_status' => 'published',
-            'stock_status' => 'in_stock',
+            'stock_status' => 'out_of_stock',
         ],
         [
             'id' => 9,
             'name' => 'Long-sleeved Camisa Masculina Chemise Men Public Club Fancy Shirt',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/irRFYu0fYf0al4jJNqWSbAk246gKgcfAXSBpDzS7.jpeg',
             'price' => 86.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -84,7 +75,6 @@ class Product extends ArrayModel
             'name' => '2019 brand casual spring luxury plaid long sleeve slim fit men shirt',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/WntwsPemFADhbQebj1vgCmyQNdxjsGLIFXR8aMa3.webp',
             'price' => 36.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -92,7 +82,6 @@ class Product extends ArrayModel
             'name' => 'NEGIZBER New Man Polo Shirt',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/OmtroziIP2b4Tu98DUAeWdeqPjhyjuKxlqEIAKc2.jpeg',
             'price' => 28.66,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -100,15 +89,13 @@ class Product extends ArrayModel
             'name' => 'Beats Studio Buds +',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/402aZpDrjsTWcZK2d9XyFS60aMHRNSLMlOb8caNR.jpg',
             'price' => 128.88,
-            'product_status' => 'published',
-            'stock_status' => 'in_stock',
+            'stock_status' => 'out_of_stock',
         ],
         [
             'id' => 13,
             'name' => 'Fossil Men\'s Gen 4 Explorist HR Stainless Steel Touchscreen Smartwatch',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/hAMhuZ9lrZUOq441HEYDJy1E2ulRpA91RIv10lzu.jpeg',
             'price' => 118.68,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -116,7 +103,6 @@ class Product extends ArrayModel
             'name' => 'Samsung Galaxy Watch Active (40mm, GPS, Bluetooth), Black',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/HKmiMtXCx9gdo81FXZu8P6eepzFmJadnMLcNpg8M.jpeg',
             'price' => 114.99,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -124,7 +110,6 @@ class Product extends ArrayModel
             'name' => 'DUDALINA Men Long Sleeve Shirt Men Casual Men Shirt Social Plus Size M-5XL',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/C1ykwlVSorMuoaX3oLCYTo9FJXKAL5jL3JVNYccZ.webp',
             'price' => 17.20,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -132,7 +117,6 @@ class Product extends ArrayModel
             'name' => '5XL Plus Size Brand-clothing Cotton Mens Clothing Solid Soft Men Shirt',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/UDC1UdfVESfsrcBjMjwqDG3FgCk6Xosuf1XGbG60.jpeg',
             'price' => 7.97,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -140,7 +124,6 @@ class Product extends ArrayModel
             'name' => '2019 brand casual spring luxury plaid long sleeve slim fit men shirt',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/WntwsPemFADhbQebj1vgCmyQNdxjsGLIFXR8aMa3.webp',
             'price' => 26.74,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -148,7 +131,6 @@ class Product extends ArrayModel
             'name' => 'Men Embroidery Polo Giraffe Shirt',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/AJKKItzgBD9nxkvR3oZwmX7857QdUWYcbrnjmd86.webp',
             'price' => 8.66,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -156,7 +138,6 @@ class Product extends ArrayModel
             'name' => 'Michael Kors Access Gen 3 Sofie Touchscreen Smartwatch',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/RLFr0cIwkmpMnqcneM2N95YBYez6OeCRLnx61YhX.jpeg',
             'price' => 299.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -164,7 +145,6 @@ class Product extends ArrayModel
             'name' => 'Apple Watch Series 5 (GPS, 40mm) - Gold Aluminum',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/wL09FKnwQCYQ6QleqcQ9fD8Wv1SRzMOZhNkkudEH.jpeg',
             'price' => 650.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -172,7 +152,6 @@ class Product extends ArrayModel
             'name' => 'Samsung Galaxy Watch smartwatch (46mm, GPS, Bluetooth) – Silver/Black',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/RQSZZecqxmwaglxjzTiXBxVTOdmpyi4lgvRur7zQ.jpeg',
             'price' => 209.99,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -180,7 +159,6 @@ class Product extends ArrayModel
             'name' => 'Acer Swift 3 SF315-41G-R6MP Laptop, 15.6" Full HD IPS Display, AMD Ryzen 7 2700U',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/YXFIHEgHF4JOGhBdtehoqGzES93CfS2gaxRpIt1U.jpeg',
             'price' => 750.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -188,7 +166,6 @@ class Product extends ArrayModel
             'name' => 'HP Spectre x360 2-in-1 15.6" 4K Ultra HD Touch-Screen Laptop, Intel i7 8th Gen',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/kYNLiQAnCD0Wt88CWNT9B571YAN3xbTvvkkw2hYg.jpeg',
             'price' => 1133.99,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -196,7 +173,6 @@ class Product extends ArrayModel
             'name' => 'Men Casual Deer Embroidery Polo shirt',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/60IGBu5N3FABdTfUYkgqvjVBmMwXh5e9N4INkXFK.jpeg',
             'price' => 7.42,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -204,7 +180,6 @@ class Product extends ArrayModel
             'name' => 'Women Oxford Backpack For Girls',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/T9ijKcaqg2jGlye1d5j3FZr9AD0rkri5JbiZsQ3B.webp',
             'price' => 13.99,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -212,7 +187,6 @@ class Product extends ArrayModel
             'name' => 'Fashion Woman Bag Female Hand Tote Bag',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/9ow69GtrdwMd3pceBYJDh18uPaNdnxcHZIu60Yrm.webp',
             'price' => 12.73,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -220,7 +194,6 @@ class Product extends ArrayModel
             'name' => 'WENYUJH 2019 New Large-capacity Student Schoolbag',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/YkJ65WzIUxv7QRkG37dkli29EYlXyaugoMnJEVt3.webp',
             'price' => 12.62,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -228,7 +201,6 @@ class Product extends ArrayModel
             'name' => 'Puimentiua Men Backpack Laptop Bag Brand',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/h1ktCT7Ogkg4drLd4LWIO8jiaZi2lPJh9kGtBeaq.webp',
             'price' => 10.99,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -236,7 +208,6 @@ class Product extends ArrayModel
             'name' => 'Women Oxford Backpack For Girls',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/T9ijKcaqg2jGlye1d5j3FZr9AD0rkri5JbiZsQ3B.webp',
             'price' => 13.99,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -244,7 +215,6 @@ class Product extends ArrayModel
             'name' => 'Huawei Mate 30 6.62" No Google Play TAS-AL00/DS 128GB 8GB RAM (GSM Only, No CDMA) Factory Unlocked',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/3X4JpWS93IAtlGNgesD0jAmc13H9TbTp8uS1eYei.jpeg',
             'price' => 1450.45,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -252,7 +222,6 @@ class Product extends ArrayModel
             'name' => 'Samsung Galaxy Tab S6 10.5", 128GB WiFi Tablet Cloud Blue',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/Fjw7GF9L517a8WoRrPAXVHtj7Agvrz1bGV193kxH.jpeg',
             'price' => 568.66,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -260,7 +229,6 @@ class Product extends ArrayModel
             'name' => 'Xiaomi Mi 9T (64GB, 6GB RAM) 6.39" AMOLED FHD + Full Screen Display',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/tT1cCALhPsUAVAdryYr6Eesc9A2uHbDLkKbw97QT.jpeg',
             'price' => 274.99,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -268,7 +236,6 @@ class Product extends ArrayModel
             'name' => 'Xiaomi Mi Note 10(white) 128GB 108MP Penta Camera 6.47″ LTE Factory Unlocked',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/2u7d1WwQ3xZN5MSW4PFKugHWX0FpxGE6lECVn6Fn.jpeg',
             'price' => 440.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -276,15 +243,13 @@ class Product extends ArrayModel
             'name' => 'Beats Fit Pro - True Wireless Noise Cancelling Earbuds',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/QVlbnyIQdYMW6h1tY4LAR5G82K54D53EnHuqaFME.jpg',
             'price' => 155.00,
-            'product_status' => 'published',
-            'stock_status' => 'in_stock',
+            'stock_status' => 'out_of_stock',
         ],
         [
             'id' => 35,
             'name' => 'Apple AirPods Pro',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/Wn4Vnhu5M2wPP6BLmsTRHEpBS4Trx4LbZk2EUDq7.jpg',
             'price' => 299.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -292,7 +257,6 @@ class Product extends ArrayModel
             'name' => 'Bose QuietComfort Bluetooth Headphones',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/hSf5a4mVSz7wUzaZxBA4wtLB6EuBgfxU0IHkZVUR.jpg',
             'price' => 349.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -300,7 +264,6 @@ class Product extends ArrayModel
             'name' => 'Sennheiser Consumer Audio Momentum 4 Wireless Headphones',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/Ze3PHrIudKWOae7lPJ76gOrVcruiChHIhLNNIfQr.jpg',
             'price' => 255.00,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -308,7 +271,6 @@ class Product extends ArrayModel
             'name' => 'OnePlus 11 5G',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/BakNufTAkT2ci9N5w5qD4CFHNcoRO22WoSqz3DQU.jpg',
             'price' => 759.99,
-            'product_status' => 'published',
             'stock_status' => 'in_stock',
         ],
         [
@@ -316,8 +278,7 @@ class Product extends ArrayModel
             'name' => 'Apple 2023 iMac (24-inch)',
             'image_url' => 'https://demo.fleetcart.envaysoft.com/storage/media/hLHNNKw8TktswvyaIUn8DNB0BoN2LOkucknuyyQc.jpg',
             'price' => 1349.00,
-            'product_status' => 'published',
-            'stock_status' => 'in_stock',
+            'stock_status' => 'out_of_stock',
         ],
     ];
 
@@ -326,7 +287,11 @@ class Product extends ArrayModel
         'name',
         'image_url',
         'price',
-        'product_status',
         'stock_status',
     ];
+
+    public function getUrl(): string
+    {
+        return route('shop.show', ['id' => $this->id]);
+    }
 }
