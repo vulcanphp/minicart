@@ -38,7 +38,7 @@ class ProductCard extends Component
 
     public function productPrice(): string
     {
-        return sprintf('$%.2f', $this->product->price);
+        return price($this->product->price);
     }
 
     /**

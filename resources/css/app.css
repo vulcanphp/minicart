@@ -35,7 +35,7 @@
         @apply hidden;
     }
 
-    .btn-is-loading {
+    .btn-add-cart.btn-is-loading {
         @apply bg-rose-600 border-rose-600 text-rose-50 pointer-events-none;
     }
 
@@ -45,6 +45,11 @@
         background-image: conic-gradient(transparent 5deg, #fff 360deg);
         mask: radial-gradient(farthest-side, transparent calc(100% - 1.3px), #fff 0);
         animation: loader-spin .5s linear infinite;
+    }
+
+    .btn-is-loading.theme-black::after {
+        background-image: conic-gradient(transparent 5deg, #030712 360deg);
+        mask: radial-gradient(farthest-side, transparent calc(100% - 1.3px), #030712 0);
     }
 }
 

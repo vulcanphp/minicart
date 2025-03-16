@@ -16,6 +16,11 @@
 
     <!-- Styles / Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <!-- Initial Cart Snapshot -->
+    <script>
+        const initialCartSnapshot = @json(get_cart_snapshot());
+    </script>
 </head>
 
 <body x-data="miniCart" class="max-w-6xl mx-auto px-4 text-gray-950">

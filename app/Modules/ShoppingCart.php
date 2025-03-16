@@ -300,6 +300,18 @@ class ShoppingCart
         return $amount;
     }
 
+    /**
+     * Calculates the total cost of all items in the cart, minus any discounts.
+     *
+     * This value is the subtotal of all items in the cart, minus the total discount
+     * of all coupons in the cart.
+     *
+     * @return float The total cost of all items in the cart, minus any discounts.
+     */
+    public function getTotal(): float
+    {
+        return $this->getSubtotal() - $this->getDiscount();
+    }
 
     /**
      * Restore the cart data from the session.
