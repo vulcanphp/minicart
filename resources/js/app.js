@@ -3,6 +3,11 @@ import './bootstrap';
 import Alpine from 'alpinejs';
 
 document.addEventListener('alpine:init', () => {
+
+    Alpine.data('miniCart', () => ({
+
+    }));
+
     Alpine.data('searchBox', () => ({
         searchResults: [
             {

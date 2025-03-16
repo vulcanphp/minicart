@@ -13,8 +13,9 @@
             </div>
 
             <div class="col-span-2 flex flex-col justify-center items-end">
-                {cart}
+                <x-cart />
             </div>
+
         </div>
     </div>
 </header>
