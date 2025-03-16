@@ -2,6 +2,7 @@
 
 namespace App\Modules;
 
+use App\Models\Coupon;
 use App\Models\Product;
 use Exception;
 use Illuminate\Session\SessionManager;
@@ -14,6 +15,9 @@ class ShoppingCart
 
     public function __construct(private SessionManager $sessionManager)
     {
+        $this->items = [];
+        $this->coupons = [];
+        $this->changed = false;
     }
 
     /**
@@ -28,7 +32,7 @@ class ShoppingCart
     public function addItem(int $id, int $quantity = 1): void
     {
         // Retrieve the product from the database
-        $product = $this->productLookup($id);
+        $product = Product::find($id); // It's Okay to use find() here
 
         if (empty($product)) {
             // Product not found, throw an exception
@@ -154,7 +158,7 @@ class ShoppingCart
      */
     public function hasCoupon(string $code): bool
     {
-        return in_array($code, $this->coupons, true);
+        return isset($this->coupons[$code]);
     }
 
     /**
@@ -170,11 +174,19 @@ class ShoppingCart
             return;
         }
 
-        if (!$this->couponValidate($code)) {
-            throw new Exception(sprintf('Invalid coupon code #%s', $code));
+        // Retrieve the coupon with the given code and ensure it is active
+        $coupon = Coupon::where('status', '=', 1)
+            ->where('code', '=', $code)
+            ->first();
+
+        // Return false if the coupon does not exist
+        if (!empty($coupon) && $this->isCouponApplicable($coupon)) {
+            $this->coupons[$code] = $coupon;
+            $this->changed = true;
+            return;
         }
 
-        $this->coupons[] = $code;
+        throw new Exception(sprintf('Invalid coupon code #%s', $code));
     }
 
     /**
@@ -194,9 +206,8 @@ class ShoppingCart
      */
     public function removeCoupon(string $code): void
     {
-        $this->coupons = collect($this->coupons)
-            ->filter(fn($coupon) => $coupon !== $code)
-            ->all();
+        unset($this->coupons[$code]);
+        $this->changed = true;
     }
 
     public function getSubtotal(): float
@@ -217,7 +228,13 @@ class ShoppingCart
     {
         $amount = 0.00;
 
-        $coupons = $this->couponLookup();
+        foreach ($this->coupons as $coupon) {
+            if ($coupon->type === 'percentage') {
+                $amount += $this->getSubtotal() * ($coupon->value / 100);
+            } else {
+                $amount += $coupon->value;
+            }
+        }
 
         return $amount;
     }
@@ -233,28 +250,55 @@ class ShoppingCart
 
     protected function onItemUpdate(Product $product, int $quantity): void
     {
+        // Check if existing coupons are applicable
+        foreach ($this->coupons as $coupon) {
+            if (!$this->isCouponApplicable($coupon)) {
+                $this->removeCoupon($coupon->code);
+            }
+        }
 
+        // add dynamically/automatically applicable coupons
+        $dynamicCoupons = Coupon::where('status', '=', 1)
+            ->where('auto_apply', '=', 1)
+            ->all();
+
+        foreach ($dynamicCoupons as $coupon) {
+            if ($this->hasCoupon($coupon->code) || !$this->isCouponApplicable($coupon)) {
+                continue;
+            }
+
+            $this->coupons[$coupon->code] = $coupon;
+            $this->changed = true;
+        }
     }
 
     /**
-     * Finds a product by its ID.
+     * Checks if a coupon is applicable to the current cart.
      *
-     * @param int $id The ID of the product to find.
+     * A coupon is considered applicable if it is active (status = 1) and the
+     * conditions associated with the coupon are met. Conditions can include
+     * minimum total amount and minimum total items.
      *
-     * @return \App\Models\Product|null The found product or null if not found.
+     * @param Coupon $coupon The coupon to check.
+     * @return bool True if the coupon is applicable, false otherwise.
      */
-    protected function productLookup(int $id): ?Product
+    protected function isCouponApplicable(Coupon $coupon): bool
     {
-        return Product::find($id); // This will return a Product object or null
-    }
+        // Check if the coupon has conditions to be met
+        if (!empty($coupon->condition)) {
 
-    protected function couponLookup()
-    {
+            // Check if the cart's subtotal meets the minimum required by the coupon
+            if (isset($coupon->condition['total_amount']) && $coupon->condition['total_amount'] > $this->getSubtotal()) {
+                return false;
+            }
 
-    }
+            // Check if the cart's total items meet the minimum required by the coupon
+            if (isset($coupon->condition['total_items']) && $coupon->condition['total_items'] > $this->getTotalItems()) {
+                return false;
+            }
+        }
 
-    protected function couponValidate()
-    {
-
+        // Return true if all conditions are met
+        return true;
     }
 }

@@ -31,8 +31,8 @@ class AppServiceProvider extends ServiceProvider
         //
         cart()->addItem(1);
         cart()->addItem(2, 2);
-        cart()->addItem(3);
+        cart()->addItem(6);
 
-        dd(cart());
+        dd(cart()->getSubtotal(), cart()->getDiscount());
     }
 }
