@@ -11,7 +11,8 @@
             <span class="text-xs absolute -top-1 -right-2 bg-rose-600/85 text-white rounded-full px-1.5 py-0.5"
                 x-text="cart.total_items"></span>
         </span>
-        <span>{!! __('Cart') !!} <span class="font-medium" x-text="`(${cart.calculation.total})`"></span></span>
+        <span class="hidden md:block">{!! __('Cart') !!} <span class="font-medium"
+                x-text="`(${cart.calculation.total})`"></span></span>
     </button>
 
     <div x-show="isSidebarOpen" x-transition.opacity x-on:click="isSidebarOpen = false"
@@ -19,7 +20,7 @@
     </div>
 
     <aside x-cloak :style="{ right: isSidebarOpen ? '0' : '-100%' }"
-        class="fixed inset-y-0 w-96 h-full bg-white shadow-xl z-40 transform transition duration-200"
+        class="fixed inset-y-0 w-full sm:w-96 h-full bg-white shadow-xl z-40 transform transition duration-200"
         :class="isSidebarOpen ? 'translate-x-0' : 'translate-x-full'">
 
         <div x-show="!isCartEmpty()" class="flex flex-col w-full h-full relative z-0"

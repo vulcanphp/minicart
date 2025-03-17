@@ -2,7 +2,8 @@
     class="border border-gray-200 rounded-lg shadow-sm shadow-gray-50/50 hover:shadow-gray-200/75 transition px-4 py-4 relative z-10">
 
     <a href="{{ $productUrl }}" class="block text-center">
-        <img src="{{ $productImageUrl }}" class="w-full m-auto h-52 object-contain" alt="{{ $productName }}">
+        <img src="{{ $productImageUrl }}" class="w-full m-auto h-32 sm:h-48 md:h-52 object-contain"
+            alt="{{ $productName }}">
     </a>
 
     @if (!$isProductInStock())

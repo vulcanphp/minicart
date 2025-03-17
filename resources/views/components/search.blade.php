@@ -1,6 +1,5 @@
-<div class="relative" x-data="searchBox" x-on:keydown="handleSearchInputKeydown($event)"
-    x-on:keydown.escape.window="isOpen = false" x-on:keydown.down.prevent="$focus.wrap().next()"
-    x-on:keydown.up.prevent="$focus.wrap().previous()">
+<div class="relative" x-on:keydown="handleSearchInputKeydown($event)" x-on:keydown.escape.window="isOpen = false"
+    x-on:keydown.down.prevent="$focus.wrap().next()" x-on:keydown.up.prevent="$focus.wrap().previous()">
 
     <form x-on:submit.prevent="fetchResult" class="relative z-20">
 
@@ -28,7 +27,7 @@
             <a :href="item.product_url"
                 class="flex focus:bg-gray-50 focus:outline-none justify-between items-center px-4 py-3 hover:bg-gray-50 group">
                 <div class="w-full flex gap-2.5">
-                    <img :src="item.image_url" :alt="item.name" class="w-12 h-12 object-contain rounded-sm">
+                    <img :src="item.image_url" :alt="item.name" class="w-14 h-14 object-contain rounded-sm">
                     <div class="w-full">
                         <h5 class="font-medium group-hover:text-rose-700 group-focus:text-rose-700 text-[0.933rem] text-ellipsis line-clamp-2"
                             x-text="item.name">
@@ -69,6 +68,7 @@
 
     </div>
 
-    <div x-cloak x-show="isOpen" x-transition.opacity x-on:click="isOpen = false"
+    <div x-cloak x-show="isOpen" x-transition.opacity x-on:click="closeSearchBox()"
         class="fixed inset-0 z-10 bg-gray-950/25"></div>
+
 </div>

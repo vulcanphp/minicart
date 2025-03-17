@@ -49,6 +49,7 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('searchBox', () => ({
         searchResults: [],
         isOpen: false,
+        mobileOpen: false,
         isLoading: false,
         noResults: false,
         query: '',
@@ -64,6 +65,8 @@ document.addEventListener('alpine:init', () => {
         },
         fetchResult() {
             if (this.isLoading) return;
+
+            if (!this.isOpen) this.isOpen = true; // Open the search box if it's closed
 
             this.query = this.$refs.searchInput.value;
             if (this.query.trim().length === 0) {
@@ -83,6 +86,19 @@ document.addEventListener('alpine:init', () => {
                     this.noResults = data.length === 0;
                     this.isLoading = false;
                 })
+        },
+        openMobileSearch() {
+            this.mobileOpen = true;
+            this.isOpen = true;
+            this.$nextTick(() => this.$refs.searchInput.focus());
+        },
+        closeSearchBox() {
+            this.isOpen = false;
+
+            // Close the mobile search box if it's open
+            if (this.mobileOpen) {
+                this.mobileOpen = false;
+            }
         },
         handleSearchInputKeydown(event) {
             // if the user presses backspace or the alpha-numeric keys, focus on the search field
