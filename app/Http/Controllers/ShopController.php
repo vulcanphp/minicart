@@ -48,4 +48,25 @@ class ShopController extends Controller
 
         return response()->json(['errors' => $errors, 'cart' => get_cart_snapshot()]);
     }
+
+    public function ajaxSearch(Request $request): JsonResponse
+    {
+        $query = trim($request->post('query'));
+
+        $result = [];
+        if (!empty($query)) {
+            $result = Product::where('name', 'like', "%$query%")
+                ->take(8)
+                ->map(fn($product) => [
+                    'id' => $product->id,
+                    'name' => $product->name,
+                    'image_url' => $product->image_url,
+                    'price' => price($product->price),
+                    'product_url' => $product->getUrl(),
+                ])
+                ->all();
+        }
+
+        return response()->json($result);
+    }
 }

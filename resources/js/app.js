@@ -1,6 +1,7 @@
 import './bootstrap';
 
 import Alpine from 'alpinejs';
+import focus from '@alpinejs/focus';
 
 document.addEventListener('alpine:init', () => {
 
@@ -46,29 +47,51 @@ document.addEventListener('alpine:init', () => {
     }));
 
     Alpine.data('searchBox', () => ({
-        searchResults: [
-            {
-                id: 1,
-                image_url: 'https://tentaz.com/html/elena/assets/images/products/best-product1.png',
-                name: 'Latest Ipad with 64gb',
-                price: 223.66,
-                product_url: '',
-            },
-            {
-                id: 2,
-                image_url: 'https://tentaz.com/html/elena/assets/images/products/best-product3.png',
-                name: 'Sony Wireless Headphone',
-                price: 166.22,
-                product_url: '',
-            },
-        ],
+        searchResults: [],
         isOpen: false,
+        isLoading: false,
+        noResults: false,
+        query: '',
+        fetchResult() {
+            if (this.isLoading) return;
 
-        fetchResult() { }
+            this.query = this.$refs.searchInput.value;
+            if (this.query.trim().length === 0) {
+                this.searchResults = [];
+                this.noResults = false;
+                return;
+            }
+
+            this.isLoading = true;
+            this.noResults = false;
+
+            // Make an AJAX request to fetch search results
+            // and update the search results
+            axios.post('/search/ajax', { query: this.query })
+                .then(({ data }) => {
+                    this.searchResults = data;
+                    this.noResults = data.length === 0;
+                    this.isLoading = false;
+                })
+        },
+        handleSearchInputKeydown(event) {
+            // if the user presses backspace or the alpha-numeric keys, focus on the search field
+            if ((event.keyCode >= 65 && event.keyCode <= 90) || (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode === 8) {
+                this.$refs.searchInput.focus();
+            }
+        },
+        focusSearchInput(event) {
+            if (event.keyCode === 191) {
+                event.preventDefault();
+                this.$refs.searchInput.focus();
+            }
+        },
     }));
 });
 
 
 window.Alpine = Alpine;
+
+Alpine.plugin(focus);
 
 Alpine.start();
