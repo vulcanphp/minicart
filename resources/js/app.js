@@ -52,6 +52,16 @@ document.addEventListener('alpine:init', () => {
         isLoading: false,
         noResults: false,
         query: '',
+        init() {
+            this.$refs.trendingKeywords.addEventListener('click', (event) => {
+                const keyword = event.target.closest('button[keyword]');
+                if (keyword) {
+                    const query = keyword.getAttribute('keyword');
+                    this.$refs.searchInput.value = query;
+                    this.fetchResult();
+                }
+            });
+        },
         fetchResult() {
             if (this.isLoading) return;
 
