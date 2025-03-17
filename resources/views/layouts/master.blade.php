@@ -14,6 +14,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
 
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+
     <!-- Styles / Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -23,13 +29,15 @@
     </script>
 </head>
 
-<body x-data="miniCart" class="max-w-6xl mx-auto px-4 text-gray-950">
+<body x-data="miniCart" class="text-gray-950">
 
     {{-- Include Header Part --}}
     @include('layouts.includes.header')
 
     {{-- Main Content --}}
-    @yield('content')
+    <main class="max-w-6xl mx-auto px-4">
+        @yield('content')
+    </main>
 
     {{-- Include Footer Part --}}
     @include('layouts.includes.footer')

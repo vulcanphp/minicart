@@ -22,7 +22,8 @@ class ShopController extends Controller
         if (empty($product)) {
             abort(404);
         }
-        dd($product);
+
+        return view('product', ['product' => $product]);
     }
 
     public function ajaxCart(Request $request): JsonResponse

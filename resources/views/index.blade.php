@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <main class="my-12">
+    <section class="my-12">
         <div class="mb-8">
             <h3 class="text-3xl font-semibold">{{ __('All Products') }}</h3>
         </div>
@@ -15,5 +15,5 @@
         <div class="mt-8">
             {{ $productPaginator->links('pagination::tailwind') }}
         </div>
-    </main>
+    </section>
 @endsection

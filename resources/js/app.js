@@ -55,10 +55,11 @@ document.addEventListener('alpine:init', () => {
         query: '',
         init() {
             this.$refs.trendingKeywords.addEventListener('click', (event) => {
-                const keyword = event.target.closest('button[keyword]');
+                const keyword = event.target.closest('span[keyword]');
                 if (keyword) {
                     const query = keyword.getAttribute('keyword');
                     this.$refs.searchInput.value = query;
+                    this.$refs.searchInput.focus();
                     this.fetchResult();
                 }
             });
