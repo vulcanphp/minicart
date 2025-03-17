@@ -25,7 +25,7 @@
 
         <template x-for="item in searchResults" :key="item.id">
             <a :href="item.product_url"
-                class="flex focus:bg-gray-50 focus:outline-none justify-between items-center px-4 py-3 hover:bg-gray-50 group">
+                class="flex focus:bg-gray-50 focus:outline-none justify-between items-center px-4 py-3 hover:bg-gray-50 group focus:border-rose-600 border border-transparent">
                 <div class="w-full flex gap-2.5">
                     <img :src="item.image_url" :alt="item.name" class="w-14 h-14 object-contain rounded-sm">
                     <div class="w-full">
@@ -49,22 +49,25 @@
             </p>
         </div>
 
-        <div x-show="query.trim().length === 0" class="px-4 py-4">
-            <h3 class="text-[0.933rem] font-semibold text-gray-800">{{ __('Trending Searches') }}</h3>
-            <div class="flex flex-wrap gap-x-4 gap-y-2 mt-2" x-ref="trendingKeywords">
-                @foreach (['Apple', 'Smartwatch', 'Samsung', 'Shirt'] as $keyword)
-                    <span keyword="{{ $keyword }}"
-                        class="cursor-pointer text-sm font-medium text-gray-600 transition-colors hover:text-rose-600 focus:outline-none focus:text-rose-600 focus:border-rose-600 border border-transparent px-1 py-0.5 flex items-center gap-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
-                            <path fill-rule="evenodd"
-                                d="M12.577 4.878a.75.75 0 0 1 .919-.53l4.78 1.281a.75.75 0 0 1 .531.919l-1.281 4.78a.75.75 0 0 1-1.449-.387l.81-3.022a19.407 19.407 0 0 0-5.594 5.203.75.75 0 0 1-1.139.093L7 10.06l-4.72 4.72a.75.75 0 0 1-1.06-1.061l5.25-5.25a.75.75 0 0 1 1.06 0l3.074 3.073a20.923 20.923 0 0 1 5.545-4.931l-3.042-.815a.75.75 0 0 1-.53-.919Z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        {{ $keyword }}
-                    </span>
-                @endforeach
+        <template x-if="query.trim().length === 0">
+            <div class="px-4 py-4">
+                <h3 class="text-[0.933rem] font-semibold text-gray-800">{{ __('Trending Searches') }}</h3>
+                <div class="flex flex-wrap gap-x-4 gap-y-2 mt-2">
+                    @foreach (['Apple', 'Smartwatch', 'Samsung', 'Shirt'] as $keyword)
+                        <button x-on:click="setSearchQuery('{{ $keyword }}')"
+                            class="cursor-pointer text-sm font-medium text-gray-600 transition-colors hover:text-rose-600 focus:outline-none focus:text-rose-600 focus:border-rose-600 border border-transparent px-1 py-0.5 flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                class="size-5">
+                                <path fill-rule="evenodd"
+                                    d="M12.577 4.878a.75.75 0 0 1 .919-.53l4.78 1.281a.75.75 0 0 1 .531.919l-1.281 4.78a.75.75 0 0 1-1.449-.387l.81-3.022a19.407 19.407 0 0 0-5.594 5.203.75.75 0 0 1-1.139.093L7 10.06l-4.72 4.72a.75.75 0 0 1-1.06-1.061l5.25-5.25a.75.75 0 0 1 1.06 0l3.074 3.073a20.923 20.923 0 0 1 5.545-4.931l-3.042-.815a.75.75 0 0 1-.53-.919Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            {{ $keyword }}
+                        </button>
+                    @endforeach
+                </div>
             </div>
-        </div>
+        </template>
 
     </div>
 
